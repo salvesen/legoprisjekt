@@ -9,7 +9,7 @@ if online
         motorB.Power = 99;
         motorB.SendToNXT();
     else
-        motorB.Power = PowerA(k);
+        motorB.Power = PowerB(k);
         motorB.SendToNXT();
     end
     % Setter powerdata mot NXT
