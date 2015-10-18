@@ -11,6 +11,7 @@ if online==1
     LysFiltrert = Lys(k);           %Light filtered set to light value
     LysFiltrertIIR = Lys(k);        %Light filtrated(IIR) set to light value
     LysDerivert = 0;           %Light derivated set to light value
+    avvikderivert(k) = 0;
     m = Samples;                    %Number of samples used in FIR filter
     Tid(k) = 0;                     %First time stamp == 0
     tic;                            %Starts the timekeeping here

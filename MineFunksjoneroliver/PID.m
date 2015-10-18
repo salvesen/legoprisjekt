@@ -5,7 +5,7 @@ function output = PID(proporsjonal,integral,derivate,Kp,Ki,Kd)
 %   max motorpower(100) and then devide by max deviation(aprox 175). If the
 %   oscilliation of the robot is too high adjust Kp down, if it cant follow
 %   line adjust Kp up.
-    output = Kp*proporsjonal + Ki*integral + Kd*derivate;
+    output = round(Kp*proporsjonal + Ki*integral + Kd*derivate);
     
 end
 
