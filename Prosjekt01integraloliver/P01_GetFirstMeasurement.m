@@ -33,9 +33,70 @@ nullpunkt = Lys(k);                 %Zero set to first light mesurment
 nullp(k) = nullpunkt;               %Zero vektor defined
 
 
+%Handles for plotting
+
+f1 = figure(1) ;     %Sets frame to 1
+%Sets position for frame
+set(f1,'Position',...
+    [(scrsz(3)/3 - ((scrsz(3)/3)/2)) scrsz(4)/3 scrsz(3)/3 scrsz(4)/3]);
+subplot(3,1,1)
+h1 = plot(Tid(k),Lys(k))     %plots light signal and zero
+hold on
+h2 = plot(Tid(k),nullp(k))
+title('Lyssignal RAW')                          
+xlabel('tid [sekund]')
+ylabel('Lyssignal')
+
+subplot(3,1,2)
+h3 = plot(Tid(k),avvik(k))   %plots deviation and zero(real)
+hold on
+h4 = plot(Tid(k),nulll(k))
+title('Avvik fra nullpunkt og nåværende lyssignal')
+xlabel('tid [sekund]')
+ylabel('Avviket')
+
+subplot(3,1,3)
+h5 = plot(Tid(k),LysIntegrert(k))    %Plots integrated and zero(real)
+hold on
+h6 = plot(Tid(k),nulll(k))
+title('Lys integrert rundt nullpunktet')
+xlabel('tid [sekund]')
+ylabel('Areal')
+
+
+
+f2 = figure(2);  %Sets frame to 2
+%Sets position for frame
+set(f2,'Position',...
+    [(scrsz(3)/3 + ((scrsz(3)/3)/2)) scrsz(4)/3 scrsz(3)/3 scrsz(4)/3]);
+subplot(3,1,1)
+h7 = plot(Tid(k),Lys(k))   %plots light and filtrated
+hold on
+h8 = plot(Tid(k),LysFiltrert(k))
+%set(h, 'XData',Tid(1:k),'YData',Lys(1:k))
+title('Lyssignal RAW og filtrert')
+xlabel('tid [sekund]')
+ylabel('Lyssignal')
+
+
+subplot(3,1,2)
+h9 = plot(Tid(k),LysDerivert(k))                %plots derivated
+title('Lyssignalet derivert')
+xlabel('tid [sekund]')
+ylabel('Derivert')
+
+subplot(3,1,3)
+h10 = plot(Tid(k),Lys(k))   %plots light and filtratedIIR
+hold on 
+h11 = plot(Tid(k),LysFiltrertIIR(k))
+title('Lyssignal filtrert med IIR')
+xlabel('tid [sekund]')
+ylabel('Lyssignal')
+
 % f2 = figure(2);  %Sets frame to 2
 % %Sets position for frame
 % set(f2,'Position',...
 %     [(scrsz(3)/3 + ((scrsz(3)/3)/2)) scrsz(4)/3 scrsz(3)/3 scrsz(4)/3]);
 % subplot(3,1,1)
 % h = plot(Tid(1:k),Lys(1:k),Tid(1:k),LysFiltrert(1:k))   %plots light and filtrated
+
