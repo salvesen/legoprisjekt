@@ -7,7 +7,7 @@
 % integrasjon, filtrering og derivasjon.
 
 clear,clc, close all                %Cleans workspace, figures and cmdw
-online=0;                           %1 if NXT is connected to computer, set manually.
+online=1;                           %1 if NXT is connected to computer, set manually.
 filename = 'P01_Lys.mat';           %If online = 0, this data file is used
 scrsz = get(groot,'ScreenSize');    %Get screensize
 Samples = 10;                       %Number of samples used in FIR filter
