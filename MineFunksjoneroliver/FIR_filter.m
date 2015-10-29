@@ -1,5 +1,5 @@
 function DataFiltered = FIR_filter(Data,m)
-    if size(Data,2) > m
+    if length(Data) > m
         DataFiltered = sum(Data((length(Data)-m+1):length(Data)))*(1/m);
 %         ind = size(Data,2)- m;
 %         DataFiltered = 0;
