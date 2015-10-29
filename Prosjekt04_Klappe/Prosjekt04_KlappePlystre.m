@@ -10,15 +10,19 @@ clear; close all       % Alltid lurt å rydde opp først
 online=1;              % Er du koplet til NXT eller ikke?
 filename = 'P01_Lys.mat'; % Angi navnet på datafilen dersom online=0. 
                           % Brukes ikke dersom online=1 
+m=20;
 
-P01_InitializeNXT 
-P01_GetFirstMeasurement
-while ~JoyMainSwitch
-    P01_GetNewMeasurement
-    P01_MathCalculations    
-    P01_CalculateAndSetMotorPower
-    P01_PlottData
+%sampels per filtrering.
+P04_InitializeNXT 
+P04_GetFirstMeasurement
+while ~JoyMainSwitch 
+   
+    P04_GetNewMeasurement
+    P04_JoysticOffsett
+    P04_MathCalculations    
+    P04_CalculateAndSetMotorPower
+    P04_PlottData
 end
-P01_CloseMotorsAndSensors
+P02_CloseMotorsAndSensors
 
 

@@ -9,10 +9,11 @@ if online
     COM_SetDefaultNXT(handle);
     
     % Initialiser sensorer (legg til etterhvert)
-    OpenLight(SENSOR_3,'ACTIVE');
+%     OpenLight(SENSOR_3,'ACTIVE');
+    OpenSound(SENSOR_2,'DB');
     
     % Initialiser motorer (legg til etterhvert)
-    motorA = NXTMotor('A');
+    motorB = NXTMotor('B');
     motorC = NXTMotor('C');
     
     % Initialiser joystick
