@@ -4,6 +4,7 @@
 k=k+1;                                       %Increase counter
 if online
     motorB = NXTMotor('B','Power',10,'TachoLimit',vinkel);
+    motorB.SendToNXT();
     motorB.WaitFor();
     for i = 1:samples
         s(i)= GetUltrasonic(SENSOR_4); 
